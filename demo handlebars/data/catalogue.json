@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Brake Pads",
+        "description": "High-quality ceramic brake pads for smooth and safe braking.",
+        "price": 49.99,
+        "imageUrl": "https://via.placeholder.com/100",
+        "stock": 100
+    },
+    {
+        "id": 2,
+        "name": "Air Filter",
+        "description": "Durable air filter to keep your engine running clean.",
+        "price": 19.99,
+        "imageUrl": "https://via.placeholder.com/100",
+        "stock": 100
+    },
+    {
+        "id": 3,
+        "name": "Spark Plugs",
+        "description": "Reliable spark plugs for efficient engine performance.",
+        "price": 9.99,
+        "imageUrl": "https://via.placeholder.com/100",
+        "stock": 100
+    },
+    {
+        "id": 4,
+        "name": "Oil Filters",
+        "description": "Premium oil filters for enhanced engine protection.",
+        "price": 14.99,
+        "imageUrl": "https://via.placeholder.com/100",
+        "stock": 0
+    },
+    {
+        "id": 5,
+        "name": "Battery",
+        "description": "Long-lasting car battery with high cold-cranking amps.",
+        "price": 119.99,
+        "imageUrl": "https://via.placeholder.com/100",
+        "stock": 100
+    }
+]
+
+

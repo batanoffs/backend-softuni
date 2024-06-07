@@ -1,0 +1,10 @@
+<h1>Catalogue Page</h1>
+<h2>Catalogue content</h2>
+
+<ul>
+    {{#each parts}}
+    {{> part}}
+    {{else}}
+    <p>No parts in the catalogue</p>
+    {{/each}}
+</ul>
