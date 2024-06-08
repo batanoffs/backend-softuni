@@ -1,4 +1,3 @@
-const catalogueData = require("../../data/catalogue.json");
 const { getParts, getPartByID } = require("../services/parts");
 
 module.exports = {
