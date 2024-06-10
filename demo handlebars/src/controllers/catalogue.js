@@ -7,8 +7,9 @@ module.exports = {
     },
 
     detailsController: (req, res) => {
-        const partId = req.params.id;
+        const partId = Number(req.params.id);
         const part = getPartByID(partId);
+
         if (!part) {
             return res.status(404).send("Not Found");
         }

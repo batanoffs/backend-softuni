@@ -40,4 +40,4 @@ module.exports = {
     createPart,
     updatePart,
     deletePart,
-}
+};

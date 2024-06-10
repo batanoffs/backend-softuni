@@ -28,8 +28,7 @@ module.exports = {
     editController: {
         get: (req, res) => {
             const { id } = req.params;
-            const partData = getPartByID(id);
-            console.log(partData);
+            const partData = getPartByID(Number(id));
             if (!partData) {
                 res.redirect("/404");
             }
@@ -54,7 +53,7 @@ module.exports = {
                 return;
             }
 
-            const result = updatePart(req.params.id, req.body);
+            const result = updatePart(Number(req.params.id), req.body);
             res.redirect("/catalogue/" + result.id);
         },
     },
