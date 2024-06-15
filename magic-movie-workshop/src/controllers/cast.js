@@ -3,7 +3,7 @@ const { createMovie } = require("../services/movie");
 module.exports = {
     create: {
         get: (req, res) => {
-            res.render("create");
+            res.render("cast-create");
         },
         post: async (req, res) => {
             const errors = {
@@ -17,7 +17,7 @@ module.exports = {
             };
 
             if (Object.values(errors).includes(true)) {
-                res.render("create", { movie: req.body, errors });
+                res.render("cast-create", { movie: req.body, errors });
                 return;
             }
             const result = await createMovie(req.body);
