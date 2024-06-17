@@ -118,6 +118,13 @@ footer {
     font-weight: bold;
     padding: 0.7em 1em;
 }
+.error label {
+    color: red;
+}
+
+.error input.inputFields, .error textarea.inputFields, .error select {
+    border-color:red;
+}
 
 .error-container {
     position: fixed;

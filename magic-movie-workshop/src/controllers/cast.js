@@ -1,4 +1,4 @@
-const { createMovie } = require("../services/movie");
+const { createCast } = require("../services/cast");
 
 module.exports = {
     create: {
@@ -7,22 +7,20 @@ module.exports = {
         },
         post: async (req, res) => {
             const errors = {
-                title: !req.body.title,
-                genre: !req.body.genre,
-                director: !req.body.director,
-                year: !req.body.year,
-                imageURL: !req.body.imageURL,
-                rating: !req.body.rating,
-                description: !req.body.description,
+                name: !req.body.name,
+                age: !req.body.age,
+                born: !req.body.born,
+                nameInMovie: !req.body.nameInMovie,
+                imageUrl: !req.body.imageUrl,
             };
 
             if (Object.values(errors).includes(true)) {
-                res.render("cast-create", { movie: req.body, errors });
+                res.render("cast-create", { cast: req.body, errors });
                 return;
             }
-            const result = await createMovie(req.body);
+            const result = await createCast(req.body);
 
-            res.redirect("/details/" + result._id);
+            res.redirect("/");
         },
     },
 };
