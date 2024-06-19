@@ -4,7 +4,7 @@ const { secret } = require("../constants/identity");
 const { session } = require("../middlewares/session");
 
 function configExpress(app) {
-    app.use(cookieParser({ secret }));
+    app.use(cookieParser({ secret })); //remove curly brackets CHECK
     app.use(session())
     //TODO add session middleware
 
