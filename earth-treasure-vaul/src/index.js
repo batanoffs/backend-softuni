@@ -5,8 +5,8 @@ const { configExpress } = require("./config/express");
 const { configHandlebars } = require("./config/hbs");
 const { configRoutes } = require("./config/routes");
 
-const { register, login } = require("./services/user");
-const { createToken, verifyToken } = require("./services/jwt");
+// const { register, login } = require("./services/user");
+// const { createToken, verifyToken } = require("./services/jwt");
 
 start();
 
@@ -24,20 +24,18 @@ async function start() {
     });
 }
 
-async function test() {
-    try {
-        const result = await login("Dani", "123456");
+// async function test() {
+//     try {
+//         const result = await login("Dani", "123456");
 
-        console.log(result);
+//         console.log(result);
 
-        const token = createToken(result);
-        console.log(token);
+//         const token = createToken(result);
+//         console.log(token);
 
-        const parseData = verifyToken(token);
-        console.log(parseData);
-    } catch (error) {
-        console.error("Caught Error: " + error.message);
-    }
-}
-
-// app.get("/", homeControler);
+//         const parseData = verifyToken(token);
+//         console.log(parseData);
+//     } catch (error) {
+//         console.error("Caught Error: " + error.message);
+//     }
+// }
