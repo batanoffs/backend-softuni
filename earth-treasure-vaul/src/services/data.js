@@ -21,15 +21,35 @@ async function create(data) {
     return record;
 }
 
-async function update(data) {
+async function update(id, data, userId) {
     //TODO extract properties from view model
-    const record = new Data({
-        prop: data.prop,
-        author: aithorId,
-    });
+    const record = await Data.findById(id);
+    if (!record) {
+        throw new ReferenceError(`Reacord not found ${id}`);
+    }
+
+    if (record.author.toString() != userId) {
+        throw new Error("Access denied");
+    }
+
+    //TODO replace with real props
+    record.prop = data.prop;
 
     await record.save();
     return record;
+}
+
+async function deleteById(id, userId) {
+    const record = await Data.findById(id);
+    if (!record) {
+        throw new ReferenceError(`Reacord not found ${id}`);
+    }
+
+    if (record.author.toString() != userId) {
+        throw new Error("Access denied");
+    }
+
+    await Data.findByIdAndDelete(id);
 }
 
 module.exports = {
@@ -37,4 +57,5 @@ module.exports = {
     getById,
     create,
     update,
+    deleteById,
 };
