@@ -1,7 +1,6 @@
+const { identityName } = require("../constants/identity");
 const { User } = require("../models/User");
 const bcrypt = require("bcrypt");
-
-const identityName = "email"; //TODO set identity based on requirements
 
 async function register(identity, password) {
     const existing = await User.findOne({ [identityName]: identity });
@@ -23,14 +22,14 @@ async function register(identity, password) {
 async function login(identity, password) {
     const user = await User.findOne({ [identityName]: identity });
 
-    if (user) {
-        throw new Error(`Incorrect username or password`);
+    if (!user) {
+        throw new Error(`Incorrect ${identityName} or password`);
     }
 
     const match = await bcrypt.compare(password, user.password);
 
     if (!match) {
-        throw new Error(`Incorrect username or password`);
+        throw new Error(`Incorrect ${identityName} or password`);
     }
 
     return user;
