@@ -1,5 +1,4 @@
-const identityName = "email"; //change if needed
-
+const identityName = "email";
 const secret = "super secret";
 
 module.exports = {

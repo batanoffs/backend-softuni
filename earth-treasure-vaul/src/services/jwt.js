@@ -1,8 +1,6 @@
 const jwt = require('jsonwebtoken')
 const { secret } = require("../constants/identity");
 
-//TODO use identity name from exam description
-
 function createToken (userData) {
     const payload = {
         email: userData.email,
