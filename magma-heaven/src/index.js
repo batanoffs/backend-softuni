@@ -26,9 +26,7 @@ async function start() {
 
 // async function test() {
 //     try {
-//         const result = await login("Dani", "123456");
-
-//         console.log(result);
+//         const result = await login("toni@email.bg", "123456");
 
 //         const token = createToken(result);
 //         console.log(token);

@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 require('../models/User')
-require('../models/Data') //TODO import specific model and change name
+require('../models/Volcano') 
 //TODO import models
 
 async function configDatabase() {
-    // TODO set database name
-    const connectionString = "mongodb://localhost:27017/exam-db";
+    const connectionString = "mongodb://localhost:27017/magma-heaven";
 
     await mongoose.connect(connectionString);
 
