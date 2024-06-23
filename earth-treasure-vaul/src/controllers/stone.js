@@ -81,7 +81,7 @@ stoneRouter.post("/edit:id", isUser(),
                 throw validation.errors;
             }
 
-            const result = await update(stoneId, req.body, req.user._id);
+            const result = await update(stoneId, req.body, userId);
 
             res.redirect("/catalog" + stoneId);
         } catch (error) {

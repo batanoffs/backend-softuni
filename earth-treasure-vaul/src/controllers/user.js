@@ -24,7 +24,7 @@ userRouter.post(
     body("password")
         .trim()
         .isLength({ min: 4 })
-        .withMessage("passowrd must be at least 4 char long"),
+        .withMessage("password must be at least 4 char long"),
     body("repass")
         .trim()
         .custom((value, { req }) => value == req.body.password)
@@ -58,9 +58,7 @@ userRouter.get("/login", isGuest(), (req, res) => {
     res.render("login");
 });
 
-userRouter.post(
-    "/login",
-    isGuest(),
+userRouter.post( "/login", isGuest(),
     body("email").trim(),
     body("password").trim(),
 

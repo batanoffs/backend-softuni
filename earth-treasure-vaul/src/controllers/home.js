@@ -24,9 +24,7 @@ homeRouter.get("/catalog/:id", async (req, res) => {
     }
 
     const isOwner = req.user?._id == stone.author.toString();
-    const hasLiked = Boolean(
-        stone.likes.find((l) => req.user?._id == l.toString())
-    );
+    const hasLiked = Boolean(stone.likes.find((l) => req.user?._id == l.toString()));
     res.render("details", { stone, isOwner, hasLiked });
 });
 
