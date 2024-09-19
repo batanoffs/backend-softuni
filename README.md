@@ -1,4 +1,4 @@
-Here I store some of the practice projects we have build during this backend module in SoftUni.
+Here I store some of the practice projects we have built during this backend module in SoftUni.
 In this course I have learned 
 
 - backend authentication
